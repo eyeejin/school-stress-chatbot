@@ -62,7 +62,10 @@ if user_input:
     if matched is not None and matched in answer_dict:
         response = answer_dict[matched]
     else:
-        response = "미안 ㅜ 잘 이해가 안 갔어. 예를 들어\n\n- 공부가 어려워\n- 집중이 안돼\n- 친구랑 사이가 안 좋아졌어\n- 선생님에게 의견을 말하기 어려워\n- 소음 때문에 힘들어\n\n이런 식으로 말해줘!"
+        response = "미안 ㅜ 잘 이해가 안 갔어. 예시처럼 입력해볼래?\n\n" \
+                   "- 공부가 어려워\n- 집중이 안돼\n- 친구랑 사이가 안 좋아졌어\n- 공사 소음이 너무 심해\n" \
+                   "- 선생님에게 말하기 힘들어\n- 교복이 불편해\n- 화장실이 너무 더러워\n" \
+                   "- 미래가 고민돼\n- 연애 고민 있어\n- 좋아하는 사람에게 고백 못 하겠어"\n\n이런 식으로 말해줘!"
 
     # 대화 기록 추가
     st.session_state.chat_history.append(("나", user_input))
@@ -78,4 +81,4 @@ for speaker, text in st.session_state.chat_history:
 # 다음 입력을 위한 안내
 if user_input:
     st.markdown("---")
-    st.markdown("다른 고민도 있어? 아래에 입력해줘 ⬇️")
+    st.markdown("다른 고민도 있어? 또 입력해줘!")
